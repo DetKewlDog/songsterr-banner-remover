@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Songsterr Banner Remover",
+    "description": "Chrome Extension to automatically remove the annoying Songsterr banner that keeps obstructing tabs.",
+    "version": "1.0.0",
+    "permissions": [
+        "declarativeContent",
+        "tabs"
+    ],
+    "icons": {
+        "16":  "icons/16.png",
+        "32":  "icons/32.png",
+        "64":  "icons/64.png",
+        "128": "icons/128.png"
+    },
+    "background": {
+        "service_worker": "scripts/service-worker.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.songsterr.com/*"
+            ],
+            "js": [
+                "scripts/content-script.js"
+            ]
+        }
+    ]
+}
